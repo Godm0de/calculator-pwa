@@ -2,13 +2,26 @@
 @use "../tools/mixin";
 
 :root{
-    @include mixin.to-css-variables(colors.$default-theme);
-
-    &.light {
-        @include mixin.to-css-variables(colors.$light-theme-color);
+    &.dark-theme{
+        @include mixin.to-css-variables(colors.$dark-theme-color);
     }
 
-    &.violet {
+    &.light-theme {
+        @include mixin.to-css-variables(colors.$light-theme-color);
+    }
+    
+    &.violet-theme {
         @include mixin.to-css-variables(colors.$violet-theme-color);
     }
 }
+
+/* TODO: Implement native prefers-color-scheme 
+:root {
+    @media (prefers-color-scheme: dark){
+        @include mixin.to-css-variables(colors.$dark-theme-color);
+    }
+
+    @media (prefers-color-scheme: light){ 
+        @include mixin.to-css-variables(colors.$light-theme-color);
+    } 
+}*/
