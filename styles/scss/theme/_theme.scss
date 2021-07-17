@@ -15,7 +15,7 @@
     }
 }
 
-/* TODO: Implement native prefers-color-scheme 
+/*
 :root {
     @media (prefers-color-scheme: dark){
         @include mixin.to-css-variables(colors.$dark-theme-color);

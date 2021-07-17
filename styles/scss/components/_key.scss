@@ -1,0 +1,42 @@
+@use "../settings/typography";
+
+$box-shadow: inset 0px -4px 0px;
+
+%basic-button{
+    border: none;
+    padding: 0.3125em 0.3125em 0.4375em  0.3125em;
+    border-radius: 5px;
+    box-shadow: $box-shadow #000000;
+
+    font-size: typography.$fs-common-keys;
+    line-height: 31px;
+
+    cursor: pointer;
+
+    &:active{
+        box-shadow: none;
+        transform: translateY(4px);
+    }
+}
+
+.key {
+    @extend %basic-button;
+
+    &--common{
+        background: var(--common-key-bg-color);
+        box-shadow: $box-shadow var(--common-key-shadow-color);
+        color: var(--common-key-text-color);
+    }
+
+    &--menu{
+        background: var(--menu-key-bg-color);
+        box-shadow: $box-shadow var(--menu-key-shadow-color);
+        color: var(--menu-key-text-color);
+    }
+
+    &--equal{
+        background: var(--equal-key-bg-color);
+        box-shadow: $box-shadow var(--equal-key-shadow-color);
+        color: var(--equal-key-text-color);
+    }
+}

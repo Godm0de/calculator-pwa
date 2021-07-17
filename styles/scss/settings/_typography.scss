@@ -1,0 +1,20 @@
+@use "sass:math";
+
+$font-family: 'Spartan', sans-serif;
+
+$fs-base: 16; // We can modify in sass the fs-base and compare it to 16px by default
+
+$fs-12: math.div(12, $fs-base) + rem;
+$fs-16: math.div(16, $fs-base) + rem;
+$fs-28: math.div(28, $fs-base) + rem;
+$fs-32: math.div(32, $fs-base) + rem;
+
+$fs-size: math.div($fs-base, 16) + rem; //16px is 1rem by default
+
+$fs-header-title: $fs-32;
+$fs-theme-selector: $fs-12;
+
+$fs-screen: $fs-32;
+
+$fs-common-keys: $fs-32;
+$fs-other-keys:  $fs-16;

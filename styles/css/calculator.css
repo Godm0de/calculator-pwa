@@ -401,7 +401,7 @@ template {
   --equal-key-text-color: #1b2428;
 }
 
-/* TODO: Implement native prefers-color-scheme 
+/*
 :root {
     @media (prefers-color-scheme: dark){
         @include mixin.to-css-variables(colors.$dark-theme-color);
@@ -413,6 +413,42 @@ template {
 }*/
 body {
   background: var(--main-bg-color);
+  font-family: "Spartan", sans-serif;
+}
+
+.key {
+  border: none;
+  padding: 0.3125em 0.3125em 0.4375em 0.3125em;
+  border-radius: 5px;
+  box-shadow: inset 0px -4px 0px #000000;
+  font-size: 2rem;
+  line-height: 31px;
+  cursor: pointer;
+}
+.key:active {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+.key--common {
+  background: var(--common-key-bg-color);
+  box-shadow: inset 0px -4px 0px var(--common-key-shadow-color);
+  color: var(--common-key-text-color);
+}
+.key--menu {
+  background: var(--menu-key-bg-color);
+  box-shadow: inset 0px -4px 0px var(--menu-key-shadow-color);
+  color: var(--menu-key-text-color);
+}
+.key--equal {
+  background: var(--equal-key-bg-color);
+  box-shadow: inset 0px -4px 0px var(--equal-key-shadow-color);
+  color: var(--equal-key-text-color);
+}
+
+.calculator {
+  padding: 1.75rem 1.5rem 1.9375rem 1.5rem;
+  min-height: 100vh;
 }
 
 /*# sourceMappingURL=calculator.css.map */
