@@ -32,11 +32,13 @@ $box-shadow: inset 0px -4px 0px;
         background: var(--menu-key-bg-color);
         box-shadow: $box-shadow var(--menu-key-shadow-color);
         color: var(--menu-key-text-color);
+        font-size: typography.$fs-other-keys;
     }
 
     &--equal{
         background: var(--equal-key-bg-color);
         box-shadow: $box-shadow var(--equal-key-shadow-color);
         color: var(--equal-key-text-color);
+        font-size: typography.$fs-other-keys;
     }
 }
