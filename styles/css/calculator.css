@@ -414,6 +414,7 @@ template {
 body {
   background: var(--main-bg-color);
   font-family: "Spartan", sans-serif;
+  height: 100vh;
 }
 
 .key {
@@ -428,7 +429,7 @@ body {
 }
 .key:active {
   box-shadow: none;
-  transform: translateY(4px);
+  transform: translateY(2px);
 }
 
 .key--common {
@@ -462,9 +463,44 @@ body {
   outline: none;
 }
 
+.switch {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.3125rem;
+  color: var(--toggle-text-color);
+}
+.switch__title {
+  font-size: 0.75rem;
+  margin: 0;
+  margin-bottom: 0.3125rem;
+}
+.switch__container {
+  background: var(--toggle-bg-color);
+  padding: 5px;
+  border-radius: 0.8125rem;
+}
+.switch__tabs {
+  font-size: 0.75rem;
+}
+.switch__tabTitles {
+  margin-left: 0.3125rem;
+}
+.switch__tab {
+  font-size: 0.75rem;
+}
+.switch__tab:not(:first-child) {
+  margin-left: 0.6875rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .header .header__title {
   font-size: 2rem;
   color: var(--main-text-color);
+  margin-top: auto;
 }
 
 .keypad {
@@ -472,6 +508,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 0.8125rem;
+  border-radius: 0.625rem;
   background: var(--display-bg-color);
   padding: 1.5rem;
 }
@@ -486,8 +523,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 1.5rem;
   padding: 1.75rem 1.5rem 1.9375rem 1.5rem;
   min-height: 100vh;
+}
+@media screen and (min-width: 728px) {
+  .calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 36.75rem;
+    min-height: auto;
+  }
 }
 
 /*# sourceMappingURL=calculator.css.map */

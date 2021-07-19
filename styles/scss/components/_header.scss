@@ -1,8 +1,13 @@
 @use "../settings/typography";
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     .header__title{
         font-size: typography.$fs-header-title;
         color: var(--main-text-color);
+        margin-top: auto;
     }
 }
