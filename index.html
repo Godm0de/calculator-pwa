@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/css/calculator.css">
     <title>Document</title>
 
+<<<<<<< HEAD
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +27,61 @@
          
         </div>
       </div>
+=======
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="">
+    <main class="calculator">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header__title">calc</h1>
+            <div class="switch">
+                <h5 class="switch__title">THEME</h5>
+                <div class="switch__wrapper">
+                    <div class="switch__tabTitles">
+                        <span class="switch__tab">1</span>
+                        <span class="switch__tab">2</span>
+                        <span class="switch__tab">3</span>
+                    </div>
+                    <div class="switch__container">
+                        <input type="radio" id="dark" name="theme-selector" class="switch__position" checked>
+                        <label for="dark"></label>
+                        <input type="radio" id="light" name="theme-selector" class="switch__position">
+                        <label for="light"></label>
+                        <input type="radio" id="violet" name="theme-selector" class="switch__position">
+                        <label for="violet"></label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Screen -->
+        <input type="text" class="screen" value="" id="display" readonly>
+
+        <!-- Keypad -->
+        <div class="keypad" id="keypad">
+            <button class="key key--common">7</button>
+            <button class="key key--common">8</button>
+            <button class="key key--common">9</button>
+            <button class="key key--menu">DEL</button>
+            <button class="key key--common">4</button>
+            <button class="key key--common">5</button>
+            <button class="key key--common">6</button>
+            <button class="key key--common">+</button>
+            <button class="key key--common">1</button>
+            <button class="key key--common">2</button>
+            <button class="key key--common">3</button>
+            <button class="key key--common">-</button>
+            <button class="key key--common">.</button>
+            <button class="key key--common">0</button>
+            <button class="key key--common">/</button>
+            <button class="key key--common">x</button>
+            <button class="key key--menu key--reset">RESET</button>
+            <button class="key key--equal">=</button>
+        </div> 
+            <!--key key--menu key--equal -->
+>>>>>>> develop
     </main>
     
     <script src="scripts/calculator.js"></script>

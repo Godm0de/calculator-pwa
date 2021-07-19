@@ -1,0 +1,19 @@
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0.8125rem;
+     
+    border-radius: 0.625rem;
+
+    background: var(--display-bg-color);
+    padding: 1.5rem;
+
+    .key--equal{
+        grid-column: 3/5;
+    }
+
+    .key--reset {
+        grid-column: 1/3;
+    }
+}

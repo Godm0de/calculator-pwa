@@ -1,0 +1,36 @@
+@use "../settings/typography";
+
+.switch {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.3125rem;
+    color: var(--toggle-text-color);
+
+    &__title {
+        font-size: typography.$fs-toggle-text;
+        margin: 0;
+        margin-bottom: 0.3125rem;
+    }
+
+    &__container {
+        background: var(--toggle-bg-color);
+        padding: 5px;
+        border-radius: 0.8125rem;
+    }
+
+    &__tabs {
+        font-size: typography.$fs-toggle-text;
+    }
+
+    &__tabTitles {
+        margin-left: 0.3125rem;
+    }
+
+    &__tab{
+        font-size: typography.$fs-toggle-text;
+    }
+
+    &__tab:not(:first-child) {
+        margin-left: 0.6875rem;
+    }
+}

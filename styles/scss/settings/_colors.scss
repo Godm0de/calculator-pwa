@@ -1,14 +1,17 @@
 // Color scheme
 $_very-dark-desaturated-blue: (hsl(222, 26%, 31%), hsl(223, 31%, 20%), hsl(224, 36%, 15%));
-$_desaturated-dark-blue: (hsl(225, 21%, 49%), hsl(224, 28%, 35%));
+$_desaturated-dark-blue: (hsl(225, 21%, 49%), hsl(224, 28%, 35%), hsl(231, 30%, 21%));
 $_red: hsl(6, 63%, 50%);
 $_dark-red: hsl(6, 70%, 34%);
-$_light-grayish-orange: hsl(30, 25%, 89%);
-$_grayish-orange: hsl(28, 16%, 65%);
-$_light-gray: hsl(0, 0%, 90%);
+$_light-grayish-orange: hsl(31, 25%, 89%);
+$_grayish-orange: hsl(27, 15%, 65%);
 $_very-dark-grayish-blue: hsl(221, 14%, 31%);
-$_white: hsl(0, 0, 100%);
-$_dark-moderate-cyan:  hsl(185, 42%, 37%);
+$_white: hsl(0, 0%, 100%);
+
+$_light-gray: hsl(0, 0%, 90%);
+$_grayish-red: hsl(0, 5%, 81%);
+$_very-light-gray: hsl(0, 0%, 93%);
+$_dark-moderate-cyan: hsl(184, 42%, 37%);
 $_very-dark-cyan: hsl(185, 58%, 25%);
 $_orange: hsl(25, 98%, 40%);
 $_dark-orange: hsl(25, 99%, 27%);
@@ -20,86 +23,75 @@ $_dark-violet: hsl(281, 89%, 26%);
 $_vivid-mangenta: hsl(285, 91%, 52%);
 $_pure-cyan: hsl(176, 100%, 44%);
 $_soft-cyan: hsl(177, 92%, 70%);
-$_very-dark-violet: hsl(268, 47%, 21%);
+$_very-saturate-dark-violet: hsl(268, 47%, 21%);
 $_dark-magenta: hsl(290, 70%, 36%);
 $_light-yellow: hsl(52, 100%, 62%);
 $_very-dark-blue: hsl(198, 20%, 13%);
 
 // Color themes
 
-// Dimmed color theme
-$dimmed-color-theme: (
-    $main-bg-dimmed-color: $_light-gray,
-    $main-text-dimmed-color: $_white,
-
-    $toggle-bg-dimmed-color: nth($_very-dark-desaturated-blue, 1),
-    $toggle-dimmed-color: $_red,
-    $toggle-text-dimmed-color: $_white,
-
-    $display-bg-dimmed-color: nth($_very-dark-desaturated-blue, 2),
-    $display-text-dimmed-color: $_white,
-
-    $common-key-bg-dimmed-color: $_light-grayish-orange,
-    $common-key-shadow-dimmed-color: $_grayish-orange,
-    $common-key-text-dimmed-color: $_very-dark-grayish-blue,
-
-    $actions-key-bg-dimmed-color: nth($_desaturated-dark-blue, 0),
-    $actions-key-shadow-dimmed-color:nth($_desaturated-dark-blue, 1),
-    $actions-key-text-dimmed-color: $_white,
-
-    $equal-key-bg-dimmed-color: $_red,
-    $equal-key-shadow-dimmed-color: $_dark-red,
-    $equal-key-text-dimmed-color: $_white
+// Dark color theme
+$dark-theme-color: (
+    "main-bg-color": nth($_very-dark-desaturated-blue, 1),
+    "main-text-color": $_white,
+    "toggle-bg-color": nth($_very-dark-desaturated-blue, 2),
+    "toggle-color": $_red,
+    "toggle-text-color": $_white,
+    "display-bg-color": nth($_very-dark-desaturated-blue, 3),
+    "display-text-color": $_white,
+    "keypad-bg-color": nth($_desaturated-dark-blue, 3),
+    "common-key-bg-color": $_light-grayish-orange,
+    "common-key-shadow-color": $_grayish-orange,
+    "common-key-text-color": $_very-dark-grayish-blue,
+    "menu-key-bg-color": nth($_desaturated-dark-blue, 1),
+    "menu-key-shadow-color": nth($_desaturated-dark-blue, 2),
+    "menu-key-text-color": $_white,
+    "equal-key-bg-color": $_red,
+    "equal-key-shadow-color": $_dark-red,
+    "equal-key-text-color": $_white,
 );
 
 // Light color theme
-$light-color-theme: (
-    $main-bg-light-color: ,
-    $main-text-light-color: ,
-
-    $toggle-bg-light-color: ,
-    $toggle-light-color: ,
-    $toggle-text-light-color: ,
-
-    $display-bg-light-color: ,
-    $display-text-light-color: ,
-
-    $common-key-bg-light-color: ,
-    $common-key-shadow-light-color: ,
-    $common-key-text-light-color: ,
-
-    $actions-key-bg-light-color: ,
-    $actions-key-shadow-light-color: ,
-    $actions-key-text-light-color: ,
-
-    $equal-key-bg-light-color: ,
-    $equal-key-shadow-light-color: ,
-    $equal-key-text-light-color: 
+$light-theme-color: (
+    "main-bg-color": $_light-gray,
+    "main-text-color": $_very-dark-grayish-yellow,
+    "toggle-bg-color": $_grayish-red,
+    "toggle-color": $_orange,
+    "toggle-text-color": $_very-dark-grayish-yellow,
+    "display-bg-color": $_very-light-gray,
+    "display-text-color": $_very-dark-grayish-yellow,
+    "keypad-bg-color": $_grayish-red,
+    "common-key-bg-color": $_light-grayish-yellow,
+    "common-key-shadow-color": $_grayish-orange,
+    "common-key-text-color": $_very-dark-grayish-yellow,
+    "menu-key-bg-color": $_dark-moderate-cyan,
+    "menu-key-shadow-color": $_very-dark-cyan,
+    "menu-key-text-color": $_white,
+    "equal-key-bg-color": $_orange,
+    "equal-key-shadow-color": $_dark-orange,
+    "equal-key-text-color": $_white,
 );
 
-// Dark color theme
-$dark-color-theme: (
-    $main-bg-dark-color: ,
-    $main-text-dark-color: ,
-
-    $toggle-bg-dark-color: ,
-    $toggle-dark-color: ,
-    $toggle-text-dark-color: ,
-
-    $display-bg-dark-color: ,
-    $display-text-dark-color: ,
-
-    $common-key-bg-dark-color: ,
-    $common-key-shadow-dark-color: ,
-    $common-key-text-dark-color: ,
-
-    $actions-key-bg-dark-color: ,
-    $actions-key-shadow-dark-color: ,
-    $actions-key-text-dark-color: ,
-
-    $equal-key-bg-dark-color: ,
-    $equal-key-shadow-dark-color: ,
-    $equal-key-text-dark-color: 
+//Dark color theme
+$violet-theme-color: (
+    "main-bg-color": nth($_very-dark-violet, 1),
+    "main-text-color": $_light-yellow,
+    "toggle-bg-color": nth($_very-dark-violet, 2),
+    "toggle-color": $_pure-cyan,
+    "toggle-text-color": $_light-yellow,
+    "display-bg-color": nth($_very-dark-violet, 2),
+    "display-text-color": $_light-yellow,
+    "keypad-bg-color": nth($_very-dark-violet, 2),
+    "common-key-bg-color": $_very-saturate-dark-violet,
+    "common-key-shadow-color": $_dark-magenta,
+    "common-key-text-color": $_light-yellow,
+    "menu-key-bg-color": $_dark-violet,
+    "menu-key-shadow-color": $_vivid-mangenta,
+    "menu-key-text-color": $_white,
+    "equal-key-bg-color": $_pure-cyan,
+    "equal-key-shadow-color": $_soft-cyan,
+    "equal-key-text-color": $_very-dark-blue,
 );
 
-
+// Default color theme
+$default-theme: $dark-theme-color;

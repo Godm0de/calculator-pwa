@@ -1,0 +1,7 @@
+@use "../settings/typography";
+
+body {
+    background: var(--main-bg-color);
+    font-family: typography.$font-family;
+    height: 100vh;
+}

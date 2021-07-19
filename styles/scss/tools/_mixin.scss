@@ -1,0 +1,5 @@
+@mixin to-css-variables($map) {
+    @each $key, $value in $map {
+        --#{$key}: #{$value};
+    }
+}
