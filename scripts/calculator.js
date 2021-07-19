@@ -5,7 +5,7 @@ let resultBool = false;
 
 const buttons = {
     "=": () => { 
-        buffer = eval(buffer + display.value.replace("X","*"));
+        buffer = eval(buffer + display.value.replace("x","*"));
         display.value = buffer;
         resultBool = true;
     },
@@ -13,15 +13,15 @@ const buttons = {
     "RESET": () => {  buffer = 0; display.value = ""; }
 }
 
-const buttonsDefault =  (value) => { display.value = (resultBool) ? value : ( display.value + value ); resultBool = false;}
+const buttonsDefault =  (value) => {  display.value = (resultBool) ? value : ( display.value + value ); resultBool = false; }
 
 document.getElementById("keypad").addEventListener( "click", (e) => {
     try{
-        (e.toElement.className === "key") ? (buttons[e.target.defaultValue] ? buttons[e.target.defaultValue]() : buttonsDefault(e.target.defaultValue)) : '';
+        (e.target.classList.contains("key")) ? (buttons[e.target.innerText] ? buttons[e.target.innerText]() : buttonsDefault(e.target.innerText)) : null;
      }catch(e){
          if(e instanceof SyntaxError){
              buffer = 0;
-             display.value = "Syntax Error";
+             display.value = "SYNTAX ERROR";
          }
      }
 });

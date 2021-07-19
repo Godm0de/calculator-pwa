@@ -422,6 +422,7 @@ body {
   border-radius: 5px;
   box-shadow: inset 0px -4px 0px #000000;
   font-size: 2rem;
+  font-weight: 700;
   line-height: 31px;
   cursor: pointer;
 }
@@ -446,6 +447,24 @@ body {
   box-shadow: inset 0px -4px 0px var(--equal-key-shadow-color);
   color: var(--equal-key-text-color);
   font-size: 1rem;
+}
+
+.screen {
+  font-size: 2rem;
+  padding: 26px 24px;
+  border: 0;
+  border-radius: 0.625rem;
+  background: var(--display-bg-color);
+  color: var(--toggle-text-color);
+  text-align: right;
+}
+.screen:focus {
+  outline: none;
+}
+
+.header .header__title {
+  font-size: 2rem;
+  color: var(--main-text-color);
 }
 
 .keypad {

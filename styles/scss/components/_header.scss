@@ -1,0 +1,8 @@
+@use "../settings/typography";
+
+.header {
+    .header__title{
+        font-size: typography.$fs-header-title;
+        color: var(--main-text-color);
+    }
+}
