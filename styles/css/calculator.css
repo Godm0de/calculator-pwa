@@ -417,6 +417,13 @@ body {
   height: 100vh;
 }
 
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .key {
   border: none;
   padding: 0.3125em 0.3125em 0.4375em 0.3125em;

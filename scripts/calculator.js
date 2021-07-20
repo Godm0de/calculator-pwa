@@ -1,19 +1,16 @@
 const display = document.getElementById("display");
 
-let buffer = 0;
 let resultBool = false;
 
 const buttons = {
     "=": () => { 
-        buffer = eval(buffer + display.value.replace("x","*"));
-        display.value = buffer;
-        resultBool = true;
+        display.value = eval(display.value.replace("x","*"));
     },
     "DEL": () => { display.value = display.value.slice(0, -1);},
-    "RESET": () => {  buffer = 0; display.value = ""; }
+    "RESET": () => { display.value = ""; }
 }
 
-const buttonsDefault =  (value) => {  display.value = (resultBool) ? value : ( display.value + value ); resultBool = false; }
+const buttonsDefault =  (value) => {  display.value += value }
 
 document.getElementById("keypad").addEventListener( "click", (e) => {
     try{
