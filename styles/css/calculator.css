@@ -374,7 +374,7 @@ template {
   --toggle-bg-color: #d1cccc;
   --toggle-color: #ca5502;
   --toggle-text-color: #35352c;
-  --display-bg-color: #ededed;
+  --display-bg-color: white;
   --display-text-color: #35352c;
   --keypad-bg-color: #d1cccc;
   --common-key-bg-color: #e5e4e1;
@@ -562,7 +562,7 @@ main {
   grid-template-rows: repeat(5, 1fr);
   gap: 0.8125rem;
   border-radius: 0.625rem;
-  background: var(--display-bg-color);
+  background: var(--keypad-bg-color);
   padding: 1.5rem;
 }
 .keypad .key--equal {
