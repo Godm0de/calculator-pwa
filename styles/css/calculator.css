@@ -486,6 +486,8 @@ main {
   font-size: 0.75rem;
   margin: 0;
   margin-bottom: 0.3125rem;
+  line-height: 0.8125rem;
+  letter-spacing: 0.0625rem;
 }
 .switch__container {
   background: var(--toggle-bg-color);
