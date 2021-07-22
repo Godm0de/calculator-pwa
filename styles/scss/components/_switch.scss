@@ -55,7 +55,7 @@
         cursor: pointer;
     }
 
-    &__wrapper::after{
+    &__ball{
         content: "";
         display: block;
         position: absolute;
@@ -64,5 +64,20 @@
         background: var(--toggle-color);
         border-radius: 50%;
         top: 24%;
+        transition: all 0.3s linear;
     }
-}
+
+    &__radio:nth-of-type(1):checked ~ .switch__ball{
+        left: 0.3125rem;
+    }
+
+    &__radio:nth-of-type(2):checked ~ .switch__ball{
+        background: chocolate;
+        left: 38%;
+    }
+
+    &__radio:nth-of-type(3):checked ~ .switch__ball{
+        background: tomato;
+        left: calc(100% - 16px - 5px);
+    }
+} 

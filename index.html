@@ -21,13 +21,14 @@
                 <h1 class="header__title">calc</h1>
                 <div class="switch">
                     <h5 class="switch__title">THEME</h5>
-                    <div class="switch__wrapper">
-                        <input type="radio" id="dark" name="theme-selector" class="switch__radio" checked>
+                    <div class="switch__wrapper" id="screen-wrapper">
+                        <input type="radio" id="dark" name="theme-selector" class="switch__radio" value="1">
                         <label for="dark" class="switch__label">1</label>
-                        <input type="radio" id="light" name="theme-selector" class="switch__radio">
+                        <input type="radio" id="light" name="theme-selector" class="switch__radio" value="2">
                         <label for="light" class="switch__label">2</label>
-                        <input type="radio" id="violet" name="theme-selector" class="switch__radio">
+                        <input type="radio" id="violet" name="theme-selector" class="switch__radio" value="3">
                         <label for="violet" class="switch__label">3</label>
+                        <span class="switch__ball"></span>
                     </div>
                 </div>
             </header>
@@ -61,6 +62,7 @@
     </main>
 
     <script src="scripts/calculator.js"></script>
+    <script src="scripts/theme-selector.js"></script>
 </body>
 
 </html>
