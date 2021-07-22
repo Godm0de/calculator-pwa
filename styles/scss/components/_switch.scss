@@ -74,12 +74,10 @@
     }
 
     &__radio:nth-of-type(2):checked ~ .switch__ball{
-        background: chocolate;
         left: 38%;
     }
 
     &__radio:nth-of-type(3):checked ~ .switch__ball{
-        background: tomato;
         left: calc(100% - 16px - 5px);
     }
 } 
