@@ -495,11 +495,9 @@ main {
   width: 4.4375rem;
   height: 2.75rem;
   justify-items: center;
-  cursor: pointer;
 }
 .switch__label {
   font-size: 0.75rem;
-  cursor: pointer;
   align-self: center;
 }
 .switch__button {
@@ -520,6 +518,7 @@ main {
   border-radius: 50%;
   transition: all 0.3s linear;
   align-self: center;
+  cursor: pointer;
 }
 .switch__circle--dark {
   left: 0.3125rem;

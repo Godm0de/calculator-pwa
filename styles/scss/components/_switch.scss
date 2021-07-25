@@ -20,13 +20,10 @@
         width: 4.4375rem;
         height: 2.75rem;
         justify-items: center;
-
-        cursor: pointer;
     }
 
     &__label {
         font-size: typography.$fs-toggle-text;
-        cursor: pointer;
         align-self: center;
     }
 
@@ -49,6 +46,7 @@
         border-radius: 50%;
         transition: all 0.3s linear;
         align-self: center;
+        cursor: pointer;
 
         &--dark {
             left: 0.3125rem;

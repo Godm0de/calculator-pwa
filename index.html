@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/css/calculator.css">
     <title>Document</title>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
@@ -20,36 +21,24 @@
             <header class="header">
                 <h1 class="header__title">calc</h1>
 
+                <!--switch-->
                 <section class="switch">
                     <h2 class="switch__title">THEME</h2>
 
-                    <div class="switch__body" id="theme-selector">
+                    <div class="switch__body" id="switch-container">
                         <span class="switch__label">1</span>
                         <span class="switch__label">2</span>
                         <span class="switch__label">3</span>
                         <div class="switch__button">
-                            <span class="switch__circle switch__circle--violet"></span>
+                            <span class="switch__circle switch__circle--dark" id="theme-toggle"></span>
                         </div>
                     </div>
                 </section>
-                
 
-                <!-- Switch 
-                <div class="switch">
-                    <h5 class="switch__title">THEME</h5>
-                    <div class="switch__wrapper" id="screen-wrapper">
-                        <input type="radio" id="dark" name="theme-selector" class="switch__radio" value="1">
-                        <label for="dark" class="switch__label">1</label>
-                        <input type="radio" id="light" name="theme-selector" class="switch__radio" value="2">
-                        <label for="light" class="switch__label">2</label>
-                        <input type="radio" id="violet" name="theme-selector" class="switch__radio" value="3">
-                        <label for="violet" class="switch__label">3</label>
-                        <span class="switch__ball"></span>
-                    </div>
-                </div> -->
             </header>
             <!-- Screen -->
             <input type="text" class="screen" value="" id="display" readonly>
+            <label for="display"></label>
 
             <!-- Keypad -->
             <div class="keypad" id="keypad">
