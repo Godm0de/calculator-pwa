@@ -2,6 +2,8 @@
 @use "../tools/mixin";
 
 :root{
+    @include mixin.to-css-variables(colors.$dark-theme-color);
+    
     &.dark-theme{
         @include mixin.to-css-variables(colors.$dark-theme-color);
     }
@@ -15,7 +17,7 @@
     }
 }
 
-/*
+
 :root {
     @media (prefers-color-scheme: dark){
         @include mixin.to-css-variables(colors.$dark-theme-color);
@@ -24,4 +26,4 @@
     @media (prefers-color-scheme: light){ 
         @include mixin.to-css-variables(colors.$light-theme-color);
     } 
-}*/
+}
