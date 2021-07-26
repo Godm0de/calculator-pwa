@@ -1,9 +1,7 @@
 @use "../settings/colors";
 @use "../tools/mixin";
 
-:root{
-    @include mixin.to-css-variables(colors.$dark-theme-color);
-    
+:root{    
     &.dark-theme{
         @include mixin.to-css-variables(colors.$dark-theme-color);
     }

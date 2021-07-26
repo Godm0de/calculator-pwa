@@ -2,16 +2,16 @@
 const root = document.documentElement;
 const toggle =  document.getElementById("theme-toggle");
 
-const toggleThemeClasses = [
-    "switch__circle--dark",
-    "switch__circle--light",
-    "switch__circle--violet"
-]
+const toggleThemeClasses = {
+    dark: "switch__circle--dark",
+    light: "switch__circle--light",
+    violet: "switch__circle--violet"
+}
 
-const setThemeInDom = (toggleTheme, rootTheme) => {
+const setThemeInDom = (theme, cssToggleClass) => {
     let initialToggleTheme =  Object.values(toggleThemeClasses).find(theme => toggle.classList.contains(theme));
-    toggle.classList.add(toggleTheme);
-    root.classList = rootTheme;
+    toggle.classList.add(cssToggleClass);
+    root.classList = theme;
 
     if(initialToggleTheme){
         toggle.classList.remove(initialToggleTheme);
@@ -21,13 +21,13 @@ const setThemeInDom = (toggleTheme, rootTheme) => {
 
 const themes = {
     dark: () => {
-        setThemeInDom("switch__circle--dark", "dark-theme")
+        setThemeInDom("dark-theme", "switch__circle--dark");
     },
     light: () => {
-        setThemeInDom("switch__circle--light", "light-theme")
+        setThemeInDom("light-theme",  "switch__circle--light");
     },
     violet: () => {
-        setThemeInDom("switch__circle--violet", "violet-theme")
+        setThemeInDom("violet-theme", "switch__circle--violet");
     }
 };
 
@@ -38,7 +38,8 @@ const themes = {
     if(theme){
         themes[theme]();
     }else{
-        setThemeInDom(theme["dark"])();
+        themes["dark"]();
+        localStorage.setItem("theme","dark");
     }
 })();
 

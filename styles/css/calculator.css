@@ -349,25 +349,6 @@ template {
   transition: background 0.3s linear, color 0.3s linear;
 }
 
-:root {
-  --main-bg-color: #3a4764;
-  --main-text-color: white;
-  --toggle-bg-color: #232c43;
-  --toggle-color: #d03f2f;
-  --toggle-text-color: white;
-  --screen-bg-color: #182034;
-  --screen-text-color: white;
-  --keypad-bg-color: #252a46;
-  --common-key-bg-color: #eae3dc;
-  --common-key-shadow-color: #b3a498;
-  --common-key-text-color: #444b5a;
-  --menu-key-bg-color: #637097;
-  --menu-key-shadow-color: #404e72;
-  --menu-key-text-color: white;
-  --equal-key-bg-color: #d03f2f;
-  --equal-key-shadow-color: #93261a;
-  --equal-key-text-color: white;
-}
 :root.dark-theme {
   --main-bg-color: #3a4764;
   --main-text-color: white;
