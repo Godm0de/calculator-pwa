@@ -349,14 +349,33 @@ template {
   transition: background 0.3s linear, color 0.3s linear;
 }
 
+:root {
+  --main-bg-color: #3a4764;
+  --main-text-color: white;
+  --toggle-bg-color: #232c43;
+  --toggle-color: #d03f2f;
+  --toggle-text-color: white;
+  --screen-bg-color: #182034;
+  --screen-text-color: white;
+  --keypad-bg-color: #252a46;
+  --common-key-bg-color: #eae3dc;
+  --common-key-shadow-color: #b3a498;
+  --common-key-text-color: #444b5a;
+  --menu-key-bg-color: #637097;
+  --menu-key-shadow-color: #404e72;
+  --menu-key-text-color: white;
+  --equal-key-bg-color: #d03f2f;
+  --equal-key-shadow-color: #93261a;
+  --equal-key-text-color: white;
+}
 :root.dark-theme {
   --main-bg-color: #3a4764;
   --main-text-color: white;
   --toggle-bg-color: #232c43;
   --toggle-color: #d03f2f;
   --toggle-text-color: white;
-  --display-bg-color: #182034;
-  --display-text-color: white;
+  --screen-bg-color: #182034;
+  --screen-text-color: white;
   --keypad-bg-color: #252a46;
   --common-key-bg-color: #eae3dc;
   --common-key-shadow-color: #b3a498;
@@ -374,8 +393,8 @@ template {
   --toggle-bg-color: #d1cccc;
   --toggle-color: #ca5502;
   --toggle-text-color: #35352c;
-  --display-bg-color: white;
-  --display-text-color: #35352c;
+  --screen-bg-color: white;
+  --screen-text-color: #35352c;
   --keypad-bg-color: #d1cccc;
   --common-key-bg-color: #e5e4e1;
   --common-key-shadow-color: #b3a498;
@@ -393,8 +412,8 @@ template {
   --toggle-bg-color: #1d0934;
   --toggle-color: #00e0d1;
   --toggle-text-color: #ffe53d;
-  --display-bg-color: #1d0934;
-  --display-text-color: #ffe53d;
+  --screen-bg-color: #1d0934;
+  --screen-text-color: #ffe53d;
   --keypad-bg-color: #1d0934;
   --common-key-bg-color: #341c4f;
   --common-key-shadow-color: #871c9c;
@@ -407,16 +426,49 @@ template {
   --equal-key-text-color: #1b2428;
 }
 
-/*
-:root {
-    @media (prefers-color-scheme: dark){
-        @include mixin.to-css-variables(colors.$dark-theme-color);
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: #3a4764;
+    --main-text-color: white;
+    --toggle-bg-color: #232c43;
+    --toggle-color: #d03f2f;
+    --toggle-text-color: white;
+    --screen-bg-color: #182034;
+    --screen-text-color: white;
+    --keypad-bg-color: #252a46;
+    --common-key-bg-color: #eae3dc;
+    --common-key-shadow-color: #b3a498;
+    --common-key-text-color: #444b5a;
+    --menu-key-bg-color: #637097;
+    --menu-key-shadow-color: #404e72;
+    --menu-key-text-color: white;
+    --equal-key-bg-color: #d03f2f;
+    --equal-key-shadow-color: #93261a;
+    --equal-key-text-color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-bg-color: #e6e6e6;
+    --main-text-color: #35352c;
+    --toggle-bg-color: #d1cccc;
+    --toggle-color: #ca5502;
+    --toggle-text-color: #35352c;
+    --screen-bg-color: white;
+    --screen-text-color: #35352c;
+    --keypad-bg-color: #d1cccc;
+    --common-key-bg-color: #e5e4e1;
+    --common-key-shadow-color: #b3a498;
+    --common-key-text-color: #35352c;
+    --menu-key-bg-color: #378186;
+    --menu-key-shadow-color: #1b5f65;
+    --menu-key-text-color: white;
+    --equal-key-bg-color: #ca5502;
+    --equal-key-shadow-color: #893901;
+    --equal-key-text-color: white;
+  }
+}
 
-    @media (prefers-color-scheme: light){ 
-        @include mixin.to-css-variables(colors.$light-theme-color);
-    } 
-}*/
 body {
   background: var(--main-bg-color);
   font-family: "Spartan", sans-serif;
@@ -468,9 +520,10 @@ main {
   padding: 26px 24px;
   border: 0;
   border-radius: 0.625rem;
-  background: var(--display-bg-color);
-  color: var(--toggle-text-color);
+  background: var(--screen-bg-color);
+  color: var(--screen-text-color);
   text-align: right;
+  cursor: default;
 }
 .screen:focus {
   outline: none;
@@ -545,7 +598,7 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 1.5625rem;
+  gap: 0.8125rem;
   border-radius: 0.625rem;
   background: var(--keypad-bg-color);
   padding: 1.5rem;
@@ -555,6 +608,11 @@ main {
 }
 .keypad .key--reset {
   grid-column: 1/3;
+}
+@media screen and (min-width: 728px) {
+  .keypad {
+    gap: 1.5rem;
+  }
 }
 
 .calculator {

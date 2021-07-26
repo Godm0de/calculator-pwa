@@ -4,7 +4,8 @@ let resultBool = false;
 
 const options = {
     "=": () => { 
-        display.value = eval(display.value.replace("x","*"));
+        let result = eval(display.value.replace("x","*"))
+        display.value = (result != undefined) ? result: "0";
     },
     "DEL": () => { display.value = display.value.slice(0, -1);},
     "RESET": () => { display.value = ""; }
@@ -13,12 +14,5 @@ const options = {
 const optionsDefault =  (value) => {  display.value += value }
 
 document.getElementById("keypad").addEventListener( "click", (e) => {
-    try{
-        (e.target.classList.contains("key")) ? (options[e.target.innerText] ? options[e.target.innerText]() : optionsDefault(e.target.innerText)) : null;
-     }catch(e){
-         if(e instanceof SyntaxError){
-             buffer = 0;
-             display.value = "SYNTAX ERROR";
-         }
-     }
+    (e.target.classList.contains("key")) ? (options[e.target.innerText] ? options[e.target.innerText]() : optionsDefault(e.target.innerText)) : null;
 });
