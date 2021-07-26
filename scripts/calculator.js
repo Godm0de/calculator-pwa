@@ -4,7 +4,7 @@ let resultBool = false;
 
 const options = {
     "=": () => { 
-        let result = eval(display.value.replace("x","*"))
+        let result = eval(display.value.replaceAll("x","*"))
         display.value = (result != undefined) ? result: "0";
     },
     "DEL": () => { display.value = display.value.slice(0, -1);},
