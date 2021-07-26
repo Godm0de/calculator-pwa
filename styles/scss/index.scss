@@ -11,15 +11,9 @@
 @use "./elements/main";
 
 // Components
-
-// Atoms
 @use "./components/key";
 @use "./components/screen";
 @use "./components/switch";
-
-// Molecules
 @use "./components/header";
 @use "./components/keypad";
-
-// Orgams
 @use "./components/calculator";

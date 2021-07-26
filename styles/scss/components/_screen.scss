@@ -6,10 +6,12 @@
     border: 0;
     border-radius: 0.625rem;
     
-    background: var(--display-bg-color);
-    color: var(--toggle-text-color);
+    background: var(--screen-bg-color);
+    color: var(--screen-text-color);
 
     text-align: right;
+
+    cursor: default;
 
     &:focus {
         outline: none;

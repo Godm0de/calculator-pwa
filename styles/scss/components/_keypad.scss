@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 1.5625rem;
+    gap: 0.8125rem;
      
     border-radius: 0.625rem;
 
@@ -15,5 +15,9 @@
 
     .key--reset {
         grid-column: 1/3;
+    }
+
+    @media screen and (min-width: 728px) {
+        gap: 1.5rem;
     }
 }

@@ -1,52 +1,58 @@
-const themeToggle = document.getElementById("theme-toggle");
-const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+// Components
+const root = document.documentElement;
+const toggle =  document.getElementById("theme-toggle");
 
-// Toggle theme css list
-const toggleThemeClasses = {
-    dark: "switch__circle--dark",
-    light: "switch__circle--light",
-    violet: "switch__circle--violet"
+const toggleThemeClasses = [
+    "switch__circle--dark",
+    "switch__circle--light",
+    "switch__circle--violet"
+]
+
+const setThemeInDom = (toggleTheme, rootTheme) => {
+    let initialToggleTheme =  Object.values(toggleThemeClasses).find(theme => toggle.classList.contains(theme));
+    toggle.classList.add(toggleTheme);
+    root.classList = rootTheme;
+
+    if(initialToggleTheme){
+        toggle.classList.remove(initialToggleTheme);
+    }
+
 }
 
-// Root element css list
-const rootThemeClasses = {
-    dark: "dark-theme",
-    light: "light-theme",
-    violet: "violet-theme"
-}
+const themes = {
+    dark: () => {
+        setThemeInDom("switch__circle--dark", "dark-theme")
+    },
+    light: () => {
+        setThemeInDom("switch__circle--light", "light-theme")
+    },
+    violet: () => {
+        setThemeInDom("switch__circle--violet", "violet-theme")
+    }
+};
 
-const themes = Object.keys(rootThemeClasses);
- 
-const getActualTheme = (theme = "dark") => {
-    const actualThemeIndex = themes.indexOf(theme);
-    return themes[actualThemeIndex + 1] ? themes[actualThemeIndex + 1] : themes[0];
-}
+// init theme
+(() => {
+    let theme = localStorage.getItem("theme");
 
-const changeActualTheme = (theme) => {
-    const initialToggleTheme =  Object.values(toggleThemeClasses).find(theme => themeToggle.classList.contains(theme));
-    themeToggle.classList.add(toggleThemeClasses[getActualTheme(theme)]);
-    themeToggle.classList.remove(initialToggleTheme);
-    document.documentElement.classList = rootThemeClasses[getActualTheme(theme)];
-}
-
-const onInit = () =>{
-    if(localStorage.getItem("theme")){
-        themeToggle.classList.add(toggleThemeClasses[localStorage.getItem("theme")]);
-        document.documentElement.classList = rootThemeClasses[localStorage.getItem("theme")];
-    }else if(userPrefersLight) {
-        localStorage.setItem("theme", "light");
-        changeActualTheme();
+    if(theme){
+        themes[theme]();
     }else{
+        setThemeInDom(theme["dark"])();
+    }
+})();
+
+// Toggle event
+toggle.addEventListener( "click" , () => {
+    let theme = localStorage.getItem("theme");
+
+    if(theme){
+        let indexInitialTheme = Object.keys(themes).indexOf(theme) 
+        let actualTheme = (Object.keys(themes)[indexInitialTheme + 1]) ? (Object.keys(themes)[indexInitialTheme + 1]) : Object.keys(themes)[0];
+        themes[actualTheme]();
+        localStorage.setItem("theme", actualTheme);
+    }else{
+        themes["dark"]();
         localStorage.setItem("theme", "dark");
     }
-}
-
-// OnInit()
-
-onInit();
-
-// Events
-themeToggle.addEventListener( "click" , () => {
-    changeActualTheme(localStorage.getItem("theme"));
-    localStorage.setItem("theme", getActualTheme(localStorage.getItem("theme")));
 })

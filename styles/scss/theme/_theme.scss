@@ -16,14 +16,3 @@
         @include mixin.to-css-variables(colors.$violet-theme-color);
     }
 }
-
-
-:root {
-    @media (prefers-color-scheme: dark){
-        @include mixin.to-css-variables(colors.$dark-theme-color);
-    }
-
-    @media (prefers-color-scheme: light){ 
-        @include mixin.to-css-variables(colors.$light-theme-color);
-    } 
-}
