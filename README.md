@@ -51,7 +51,7 @@ Users should be able to:
 
 ### What I learned
 
-I learn to manager serveral color themes with sass, i could implemented a prefer-color-scheme media query but i decied to use localstorage to save the choosen theme.
+I learn to manager serveral color themes with sass, i could implemente a prefer-color-scheme media query but i decide to use the localstorage to save the choosen theme.
 
 I guess the magic lives in the sass theme file and this mixin:
 
